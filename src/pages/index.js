@@ -1,43 +1,47 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+// This is the homepage.
 
-import Bio from "../components/bio"
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+
+import ItemThumbnail from '../components/ItemThumbnail/ItemThumbnail';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+
+const ThumbnailsWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+`
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const items = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+        <SEO title="All items" />
+      <ThumbnailsWrapper>
+        {items.map(({ node }) => {
+          const { title, image, price } = node.frontmatter
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
+            <ItemThumbnail
+              key={node.fields.slug}
+              link={node.fields.slug}
+              heading={title}
+              image={image.childImageSharp.fluid}
+              price={price}
+            />
           )
         })}
+      </ThumbnailsWrapper>
+        
+
       </Layout>
     )
   }
@@ -60,9 +64,15 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
-            description
+            price
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

@@ -1,97 +1,80 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
+
 <h1 align="center">
-  Gatsby's blog starter
+  Gatsby and Snipcart e-commerce starter
 </h1>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Create a simple and effective e-commerce shop using this starter.   
+This starter uses Snipcart to create an easy-to-use shopping cart for an e-commerce site. Use this as a boilerplate to create your own Snipcart powered Gatsby shop!
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
-
+---
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Create a Gatsby site using the starter.**
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+    Use the Gatsby CLI to create a new site, specifying the snipcart starter.
 
     ```sh
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-    ```
+    # create a new Gatsby site using the snipcart starter
+    gatsby new my-shop-starter https://github.com/gatsbyjs/gatsby-starter-blog
+    ```  
 
-1.  **Start developing.**
+1. **Create a Snipcart account.**
 
-    Navigate into your new site’s directory and start it up.
+    Go to [snipcart.com](https://snipcart.com/) and make an account. When using the test environment in Snipcart, everything is free and fake transactions can be made to test all aspects of your shop.
+    You will be able to access a test public API from your dashboard. This will be needed in the `gatsby-config.js` file.  
+
+1.  **Open up the source files using a code editor.**
+
+    Navigate into your new site’s directory, install, and start it up.
 
     ```sh
     cd my-blog-starter/
+    npm install
     gatsby develop
-    ```
+    ```  
 
-1.  **Open the source code and start editing!**
+1.  **Add your own Snipcart data!**
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    Open the `my-shop-starter` directory in your code editor of choice and edit `gatsby-config.js` to change the API key to your own public test API key (you can find this in your Snipcart account).
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+---
+## 🔍 What does it use?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+This starter uses the following major packages to make it easy to use:
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+- **Snipcart**  
+  Snipcart provides an out-of-the-box shopping cart and checkout for e-commerce websites and works brilliantly with static sites. Some comments have been added to the files in this starter to provide some information and explanation. See the [Snipcart documentation](https://docs.snipcart.com/) for extra guidance.
+- **Styled Components**  
+  SC is used in this project. Components are styled at the top of each component file. A basic theme is used for colours and a global style component is used to apply a reset. See the [Styled Components documentation](https://www.styled-components.com/docs) if you're unsure how to use this. Alternatively, you can remove all references to styled-components and use your own method of applying styles and css.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+---
+## 📁 Important files
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+  There are a few important files to take note of:
+  
+  - `src/pages/index.js`  
+    This file is the homepage of your shop. 
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+  - `src/templates/item.js`  
+    This file is the template used for the programmatically generated item pages in your shop.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+  - `src/components/layout.js`  
+    This file provides a basic layout to all the pages of your shop.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+  - `src/styles/theme.js`  
+    This file is used by the styled-components package to provide a theme to the entire site. It contains three colours that are used throughout the site. To easily change the color scheme, you can change the colours in this file.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+  - `src/styles/globalStyle.js`  
+    This file is used by the styled-components package to reset styles and provide some basic global styling to your shop via the layout  file described above.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+  - `content/items`  
+    This **folder** contains all the markdown files representing items in your shop. Each item consists of a folder containing a markdown file (`index.md`) and an image. Edit or create more of these with the same markdown structure to change/add items to the shop.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
+---
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/issydennis/gatsby-snipcart)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
