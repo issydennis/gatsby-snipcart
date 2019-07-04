@@ -47,7 +47,6 @@ class HeaderMinor extends Component {
     }
 
     componentDidMount() {
-        console.log('component did mount')
         if (window.Snipcart) {
             //this allows it to work when switching pages
             var count = window.Snipcart.api.items.count();
@@ -69,6 +68,7 @@ class HeaderMinor extends Component {
 
     componentWillUnmount () {
         window.Snipcart.unsubscribe('cart.closed');
+        window.Snipcart.unsubscribe('cart.ready');
     }
     
 

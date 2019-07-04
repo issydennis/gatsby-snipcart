@@ -40,10 +40,7 @@ class Layout extends React.Component {
   componentDidMount() {
     if (window.Snipcart) {
       window.Snipcart.api.configure('show_continue_shopping', true);
-      //console.log('yay', cart)
-
     }
-    console.log('window', window)
   }
 
 
