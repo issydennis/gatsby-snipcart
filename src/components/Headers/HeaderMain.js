@@ -7,7 +7,7 @@ const HeaderMainStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding-top: 20px;
 `
 
 const ShopName = styled.h1`

@@ -10,10 +10,8 @@ import HeaderMinor from './Headers/HeaderMinor';
 const PageWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  width: 80%;
-  @media (max-width: 600px) {
-    width: 90%;
-  }
+  width: 90%;
+
 `
 
 const MainSection = styled.main`
