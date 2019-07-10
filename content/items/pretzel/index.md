@@ -1,8 +1,7 @@
 ---
 title: Chocolate and pretzel cupcakes
-layout: post
 date: 2019-06-19
-id: 2
+id: 4
 price: 3.50
 image: ./image1.jpg
 description: A delicious pretzel topped treat

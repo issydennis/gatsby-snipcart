@@ -1,6 +1,5 @@
 ---
 title: Coffee Buttercream
-layout: post
 date: 2019-06-19
 id: 1
 price: 3

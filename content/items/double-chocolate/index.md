@@ -1,8 +1,7 @@
 ---
 title: Double chocolate buttercream
-layout: post
 date: 2019-06-19
-id: 1
+id: 2
 price: 3
 image: ./image1.jpg
 description: A delicious chocolatey treat.

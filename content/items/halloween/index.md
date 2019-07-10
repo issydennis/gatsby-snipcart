@@ -1,6 +1,5 @@
 ---
 title: Halloween cake
-layout: post
 date: 2019-06-19
 id: 3
 price: 2.50
