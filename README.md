@@ -6,6 +6,8 @@
 Create a simple and effective e-commerce shop using this starter.   
 This starter uses Snipcart to create an easy-to-use shopping cart for an e-commerce site. Use this as a boilerplate to create your own Snipcart powered Gatsby shop!
 
+For a walkthrough and tutorial using this starter see my [blog](https://www.frontendstumbles.com/gatsby-and-snipcart-ecommerce-tutorial/).
+
 ---
 ## 🚀 Quick start
 
