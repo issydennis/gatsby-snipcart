@@ -80,3 +80,8 @@ This starter uses the following major packages to make it easy to use:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/issydennis/gatsby-snipcart)
 
+
+---
+## ⚠️ Troubleshooting
+
+- As you're replacing content within content/items, make sure to kill the development server, run ```gatsby clean``` to remove the cached versions of your content
